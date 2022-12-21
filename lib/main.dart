@@ -12,7 +12,7 @@ class BasicApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: MainScreen(),
+      home: HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
