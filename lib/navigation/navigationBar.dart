@@ -140,7 +140,7 @@ class _BottomBarViewState extends State<BottomBarView>
                       // alignment: Alignment.center,s
                       decoration: BoxDecoration(
                         color: AppTheme.nearlyDarkRed,
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                             colors: [
                               Color.fromARGB(255, 197, 38, 38),
                               Colors.black,
@@ -162,7 +162,7 @@ class _BottomBarViewState extends State<BottomBarView>
                           highlightColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           onTap: widget.addClick,
-                          child: Icon(
+                          child: const Icon(
                             Icons.add,
                             color: AppTheme.white,
                             size: 32,
@@ -262,12 +262,12 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
                     scale: Tween<double>(begin: 0.0, end: 1.0).animate(
                         CurvedAnimation(
                             parent: widget.tabIconData!.animationController!,
-                            curve: Interval(0.2, 1.0,
+                            curve: const Interval(0.2, 1.0,
                                 curve: Curves.fastOutSlowIn))),
                     child: Container(
                       width: 8,
                       height: 8,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppTheme.nearlyDarkRed,
                         shape: BoxShape.circle,
                       ),
@@ -283,12 +283,12 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
                     scale: Tween<double>(begin: 0.0, end: 1.0).animate(
                         CurvedAnimation(
                             parent: widget.tabIconData!.animationController!,
-                            curve: Interval(0.5, 0.8,
+                            curve: const Interval(0.5, 0.8,
                                 curve: Curves.fastOutSlowIn))),
                     child: Container(
                       width: 4,
                       height: 4,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppTheme.nearlyDarkRed,
                         shape: BoxShape.circle,
                       ),
@@ -304,12 +304,12 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
                     scale: Tween<double>(begin: 0.0, end: 1.0).animate(
                         CurvedAnimation(
                             parent: widget.tabIconData!.animationController!,
-                            curve: Interval(0.5, 0.6,
+                            curve: const Interval(0.5, 0.6,
                                 curve: Curves.fastOutSlowIn))),
                     child: Container(
                       width: 6,
                       height: 6,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppTheme.nearlyDarkRed,
                         shape: BoxShape.circle,
                       ),
