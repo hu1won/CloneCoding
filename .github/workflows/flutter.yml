@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: mac-mini-m1
+    runs-on: windows-latest
     
     steps:
       - name: Checkout
