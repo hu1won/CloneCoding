@@ -17,6 +17,7 @@ jobs:
           flutter-version: '2.23.1'
       - name: Install packages
         run: flutter pub get
+        working-directory: ${{ github.workspace }/bewinnar
       - name: Linter
         run: flutter analyze
       - name: Test
