@@ -1,24 +1,31 @@
-name: Flutter CI
-
+name: Tests
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
   pull_request:
-    branches: [ master ]
 
 jobs:
-  test:
-    name: Check the source code
-    runs-on: ubuntu-latest
+  unit-test:
+    name: Unit tests on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, windows-2019, macos-10.15]
     steps:
-      - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2.3.0
+      # Set up Flutter.
+      - name: Clone Flutter repository with master channel
+        uses: subosito/flutter-action@v1.5.0
         with:
-          flutter-version: '2.23.1'
-      - name: Install packages
-        run: flutter pub get
-        working-directory: ${{ github.workspace }
-      - name: Linter
-        run: flutter analyze
-      - name: Test
+          channel: stable
+      - run: flutter doctor -v
+
+      - name: Get pub packages
+        uses: actions/checkout@v2
+      - run: flutter pub get
+
+      - run: flutter analyze
+      - name: Ensure the Dart code is formatted correctly
+        run: flutter format --set-exit-if-changed --dry-run .
+      - name: Run Flutter unit tests
         run: flutter test
